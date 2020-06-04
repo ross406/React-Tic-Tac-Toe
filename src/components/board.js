@@ -179,13 +179,22 @@ export class Board extends React.Component {
           </div>
 
           {/* Button to start new game */}
-          {winner && (
+
+          {/* {winner && (
             <div className="board-footer">
               <button className="btn" onClick={this.handleBoardRestart}>
                 Start new game
               </button>
             </div>
-          )}
+          )} */}
+
+          {isFilled || winner ? (
+            <div className="board-footer">
+              <button className="btn" onClick={this.handleBoardRestart}>
+                Start new game
+              </button>
+            </div>
+          ) : null}
         </div>
       </>
     );
